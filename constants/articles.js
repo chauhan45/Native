@@ -1,3 +1,5 @@
+// import React from 'react';
+// import image from '../assets/imgs/yoga.png';
 export default [
   {
     title: 'Ice cream is made with carrageenan …',
@@ -26,4 +28,6 @@ export default [
     cta: 'View article', 
     horizontal: true
   },
+
+  
 ];

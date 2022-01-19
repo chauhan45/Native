@@ -15,6 +15,7 @@ import Profile from "../screens/Profile";
 import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
+import Yoga from "../screens/Yoga";
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -177,6 +178,46 @@ function HomeStack(props) {
   );
 }
 
+function Yoga1 (props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Yoga"
+        component={Yoga}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Yoga
+              title="Yoga"
+              search
+              options
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "#F8F9FE" }
+        }}
+      />
+      <Stack.Screen
+        name="Pro"
+        component={Pro}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              title=""
+              back
+              white
+              transparent
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          headerTransparent: true
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
 export default function OnboardingStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="none">
@@ -224,6 +265,7 @@ function AppStack(props) {
       initialRouteName="Home"
     >
       <Drawer.Screen name="Home" component={HomeStack} />
+      <Drawer.Screen name="Yoga" component={Yoga1} />
       <Drawer.Screen name="Profile" component={ProfileStack} />
       <Drawer.Screen name="Account" component={Register} />
       <Drawer.Screen name="Elements" component={ElementsStack} />
@@ -231,4 +273,6 @@ function AppStack(props) {
     </Drawer.Navigator>
   );
 }
+
+
 
